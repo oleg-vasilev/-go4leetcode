@@ -1,5 +1,6 @@
 # IDE folders
 /.idea/
+/sandbox/
 # Binaries for programs and plugins
 *.exe
 *.exe~
