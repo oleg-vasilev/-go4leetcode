@@ -34,7 +34,7 @@ func maxDepthIterative(root *TreeNode) int {
 	queue := list.New()
 	queue.PushBack(root)
 
-	// process three depths one by one
+	// process tree depth levels one by one
 	for queue.Len() > 0 {
 		// at this point queue contains only nodes from current depth level
 		// remember nodes count to correctly iterate over them because in process
