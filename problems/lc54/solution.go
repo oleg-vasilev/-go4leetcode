@@ -14,40 +14,40 @@ func spiralOrder(matrix [][]int) []int {
 	columns := len(matrix[0])
 	result := make([]int, rows*columns)
 
-	var col, row int
+	var row, col int
 	var counter int
 	var direction = right
 
 	for counter < rows*columns {
-		result[counter] = matrix[col][row]
+		result[counter] = matrix[row][col]
 		switch direction {
 		case right:
-			if col+row == columns-1 {
+			if row+col == columns-1 {
 				direction = down
-				col++
-			} else {
 				row++
+			} else {
+				col++
 			}
 		case down:
-			if columns-row == rows-col {
+			if columns-col == rows-row {
 				direction = left
-				row--
+				col--
 			} else {
-				col++
+				row++
 			}
 		case left:
-			if col+row == rows-1 {
+			if row+col == rows-1 {
 				direction = up
-				col--
-			} else {
 				row--
+			} else {
+				col--
 			}
 		case up:
-			if col-row == 1 {
+			if row-col == 1 {
 				direction = right
-				row++
+				col++
 			} else {
-				col--
+				row--
 			}
 		}
 		counter++
